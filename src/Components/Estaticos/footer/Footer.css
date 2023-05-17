@@ -1,0 +1,24 @@
+.barra-footer{
+    background-color : rgb(160, 51, 51)!important;
+    height: 120px;
+}
+
+.barra-footer-bottom{
+    background-color : rgb(160, 51, 51)!important;
+    height: 60px;
+}
+
+.facebook-icon{
+    font-size: 60px!important; 
+    fill: rgb(40, 40, 248)!important;
+}
+
+.github-icon{
+    font-size: 60px!important;
+    fill: black!important;
+}
+
+.linkedin-icon{
+    font-size: 60px!important;
+    fill: rgb(55, 55, 221)!important;
+}
