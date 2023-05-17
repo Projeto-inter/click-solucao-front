@@ -1,5 +1,5 @@
 import React from 'react';
-import '.Login.css'
+import './Login.css'
 import {Grid, Box, Typography, TextField, Button} from '@mui/material';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,6 @@ function Login() {
                             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos'> Entrar </Typography>
                             <TextField id='usuario' label='Nome de usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                             <TextField id='senha' label='Senha' variant='outlined' name='senha' margin='normal' fullWidth type='password' />
-                            {/* o link precisa ser o do react-router-dom */}
                             <Box marginTop={2} textAlign='center'>
                             <Link to='/home' className='text-decorator-none'>                                                                                
                                 <Button type='submit' variant='contained' color='primary' >Logar</Button>
