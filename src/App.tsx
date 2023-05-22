@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
-import Sobre from "./Paginas/sobre/Sobre";
-import Home from "./Paginas/home/Home";
-import Navbar from "./Components/Estaticos/navbar/Navbar";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
 import Footer from "./Components/Estaticos/footer/Footer";
+import Navbar from "./Components/Estaticos/navbar/Navbar";
+import Home from "./Paginas/home/Home";
+import "./App.css";             
 import Login from "./Paginas/login/Login";
 import CadastrarUsuario from "./Paginas/cadastrar-user/CadastrarUser";
+import Sobre from "./Paginas/sobre/Sobre";
 
 function App() {
   return (
@@ -29,3 +29,4 @@ function App() {
 }
 
 export default App;
+
