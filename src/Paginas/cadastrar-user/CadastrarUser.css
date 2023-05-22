@@ -1,0 +1,26 @@
+.first-text2{
+    font-weight: bold;
+    color: aquamarine;
+}
+
+.fotoFundo2{
+    background-image : url("https://i.imgur.com/d5bMdDJ.jpg");
+    min-height : 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.corEntradas2{
+    background-color: pink;
+}
+
+.btnCancelar{
+    background-color: rgb(233, 27, 62) !important;
+    cursor: pointer;
+    margin-right: 20px!important;
+}
+
+.fullfill-vh-color2{
+    background-color: rgb(214, 93, 93);
+    
+}
