@@ -6,10 +6,12 @@ import useLocalStorage from "react-use-localstorage";
 import { login } from "../../service/Service";
 import UserLogin from "../../Components/moldels/UserLogin";
 import "./Login.css";
+import { useDispatch } from "react-redux";
 
 function Login() {
   let navigate = useNavigate();
-  const [token, setToken] = useLocalStorage("token");
+  const dispatch = useDispatch();
+  const [token,setToken] = useState('');
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
