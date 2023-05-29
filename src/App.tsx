@@ -5,17 +5,21 @@ import {
   Routes,
   BrowserRouter,
 } from "react-router-dom";
+import "./App.css";
+import store from "./store/store";
+import { Provider } from "react-redux";
 import Footer from "./Components/Estaticos/footer/Footer";
 import Navbar from "./Components/Estaticos/navbar/Navbar";
 import Home from "./Paginas/home/Home";
-import "./App.css";
 import Login from "./Paginas/login/Login";
-import CadastrarUsuario from "./Paginas/cadastrar-user/CadastrarUser";
 import Sobre from "./Paginas/sobre/Sobre";
+import CadastrarUsuario from "./Paginas/cadastrar-user/CadastrarUser";
 import ListaCategorias from "./Components/categorias/listaCategoria/ListaCategorias";
-import FormularioServico from "./Components/servicos/formularioServico/FormularioServico";
-import store from "./store/store";
-import { Provider } from "react-redux";
+import DeletarCategoria from "./Components/categorias/deletarCategoria/deletarCategoria";
+import CadastroCategoria from "./Components/categorias/cadastroCategoria/CadastroCategoria";
+import ListaServicos from "./Components/servicos/listaServico/ListaServicos";
+import CadastroServico from "./Components/servicos/cadastrarServico/CadastrarServico";
+import DeletarServico from "./Components/servicos/deletarServico/DeletarServico";
 
 function App() {
   return (
@@ -26,16 +30,20 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-
-            <Route path="/categorias" element={<ListaCategorias />} />
-            <Route path='/servicos' element={<ListaServicos />} />
-            <Route path='/formularioServico' element={<FormularioServico />} />
-            <Route path='/formularioServico/:id' element={<FormularioServico />} />
-
-            <Route path="/aboutus" element={<Sobre />} />
             <Route path="/register" element={<CadastrarUsuario />} />
-
+            <Route path="/home" element={<Home />} />
+            <Route path="/aboutus" element={<Sobre />} />
+            <Route path="/categorias" element={<ListaCategorias />} />
+            <Route path="/formCategorias" element={<CadastroCategoria />} />
+            <Route path="/formCategorias/:id" element={<CadastroCategoria />} />
+            <Route
+              path="/deleteCategorias/:id"
+              element={<DeletarCategoria />}
+            />
+            <Route path="/servicos" element={<ListaServicos />} />
+            <Route path="/formServico" element={<CadastroServico />} />
+            <Route path="/formServico/:id" element={<CadastroServico />} />
+            <Route path="/deleteServico/:id" element={<DeletarServico />} />
           </Routes>
         </div>
         <Footer />

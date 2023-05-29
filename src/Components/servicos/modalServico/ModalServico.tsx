@@ -61,7 +61,7 @@ function ModalServico () {
       <Button
         variant="outlined"
         className="btnModal"
-        onClick={handleOpen}>Nova Serviço</Button>
+        onClick={handleOpen}>Novo Serviço</Button>
       <Modal
         open={open}
         onClose={handleClose}

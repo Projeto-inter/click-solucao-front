@@ -1,7 +1,9 @@
 import React from "react";
 import { Typography, Grid, Button } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Box, Link } from "@mui/material";
 import "./Home.css";
+import TabServicos from "../../Components/servicos/tabServicos/TabServicos";
+import ModalServico from "../../Components/servicos/modalServico/ModalServico";
 
 function Home() {
   return (
@@ -36,8 +38,9 @@ function Home() {
           </Typography>
         </Box>
         <Box display="flex" justifyContent="center">
-          <Box marginRight={1}></Box>
-          <Button
+          <Box marginRight={1}>{<ModalServico />}</Box>
+          <Link to='/servicos'>
+            <Button
             variant="outlined"
             style={{
               borderColor: "white",
@@ -47,6 +50,8 @@ function Home() {
           >
             Ver Serviços
           </Button>
+          </Link>
+          
         </Box>
       </Grid>
       <Grid item xs={6}>
@@ -58,6 +63,7 @@ function Home() {
         />
       </Grid>
       <Grid xs={12} style={{ backgroundColor: "white" }}></Grid>
+      {<TabServicos />}
     </Grid>
   );
 }

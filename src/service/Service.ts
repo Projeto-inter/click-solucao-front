@@ -24,9 +24,9 @@ export const buscaId = async(url: any, setDado: any, header: any) => { //header:
   setDado(resposta.data) 
 }
 
-export const post = async(url: any, dados: any, setDado: any, header: any) => { //header: passa o token para autenticar a requisição 
-  const resposta = await api.post(url, dados, header)
-  setDado(resposta.data) 
+export const post = async(url: any, dados: any, setDado: any, header: any) => { 
+  const resposta = await api.post(url,dados,header)
+  setDado(resposta.data)
 }
 
 export const put = async(url: any, dados: any, setDado: any, header: any) => { //header: passa o token para autenticar a requisição 

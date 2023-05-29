@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,38 +25,50 @@ function Navbar() {
     navbarComponent = (
       <AppBar position="static">
         <Toolbar variant="dense">
-          <Box className="cursor">
-            <Typography variant="h6" color="inherit">
-              Click Soluções
-            </Typography>
-          </Box>
-
-          <Box display="flex" justifyContent="start">
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                home
-              </Typography>
-            </Box>
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                serviços
-              </Typography>
-            </Box>
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                categoria
-              </Typography>
-            </Box>
-            <Box mx={1} className="cursor">
-              <Typography variant="h6" color="inherit">
-                cadastrar categoria
-              </Typography>
-            </Box>
+          <Box>
+            <Link to="/home">
+              <Button>
+                <Box className="cursor">
+                  <Typography variant="h6" color="inherit">
+                    Click Soluções
+                  </Typography>
+                </Box>
+              </Button>
+            </Link>
+            <Link to="/servicos">
+              <Button>
+                <Box mx={1} className="cursor">
+                  <Typography variant="h6" color="inherit">
+                    serviços
+                  </Typography>
+                </Box>
+              </Button>
+            </Link>
+            <Link to="/categorias">
+              <Button>
+                <Box mx={1} className="cursor">
+                  <Typography variant="h6" color="inherit">
+                    categoria
+                  </Typography>
+                </Box>
+              </Button>
+            </Link>
+            <Link to="/formCategorias">
+              <Button>
+                <Box mx={1} className="cursor">
+                  <Typography variant="h6" color="inherit">
+                    cadastrar categoria
+                  </Typography>
+                </Box>
+              </Button>
+            </Link>
+            <Button>
               <Box mx={1} className="cursor" onClick={goLogout}>
                 <Typography variant="h6" color="inherit">
                   logout
                 </Typography>
               </Box>
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

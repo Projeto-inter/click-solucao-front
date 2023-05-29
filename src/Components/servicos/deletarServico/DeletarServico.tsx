@@ -17,7 +17,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 
 
 function DeletarServico() {
-  const [servico, setServico] = useState<Servico[]>([]);
+  const [servico, setServico] = useState<Servico>();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -47,7 +47,7 @@ function DeletarServico() {
 
   function sim() {
     navigate("/servicos");
-    deleteId(`/servicos/${id}`, {
+    deleteId(`/servico/${id}`, {
       headers: {
         Authorization: token,
       },

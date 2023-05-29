@@ -15,7 +15,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { busca, buscaId, post, put } from "../../../service/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
-import Usuario from "../../../model/User";
+import User from "../../../model/User";
 import Servico from "../../../model/Servico";
 import Categoria from "../../../model/Categoria";
 
@@ -28,9 +28,7 @@ function CadastroServico() {
     (state) => state.tokens
   );
   //buscar id dentro do redux
-  const userId = useSelector<TokenState, TokenState["id"]>(
-    (state) => state.id
-  );
+  const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
 
   useEffect(() => {
     if (token == "") {
@@ -45,16 +43,16 @@ function CadastroServico() {
   });
   const [servico, setServico] = useState<Servico>({
     id: 0,
-    nome: '',
-    descricao: '',
-    local: '',
-    foto: '',
+    nome: "",
+    descricao: "",
+    local: "",
+    foto: "",
     valor: 0,
     categoria: null,
     usuario: null,
     //add para inserir o usuário dono da postagem
   });
-  const [usuario, setUsuario] = useState<Usuario>({
+  const [usuario, setUsuario] = useState<User>({
     id: +userId,
     nome: "",
     usuario: "",
@@ -71,7 +69,7 @@ function CadastroServico() {
       ...servico,
       categoria: categoria,
       usuario: usuario,
-      // add user dentro de post q está sendo enviado ao back 
+      // add user dentro de post q está sendo enviado ao back
     });
   }, [categoria]);
 
@@ -91,7 +89,7 @@ function CadastroServico() {
   }
 
   async function findByIdServico(id: string) {
-    await buscaId(`servicos/${id}`, setServico, {
+    await buscaId(`/servico/${id}`, setServico, {
       headers: {
         Authorization: token,
       },
@@ -110,12 +108,12 @@ function CadastroServico() {
     e.preventDefault();
 
     if (id !== undefined) {
-      put(`/servicos`, servico, setServico, {
+      put(`/servico`, servico, setServico, {
         headers: {
           Authorization: token,
         },
       });
-      alert("Servico atualizada com sucesso");
+      alert("Serviço atualizada com sucesso");
     } else {
       post(`/servico`, servico, setServico, {
         headers: {
@@ -140,31 +138,32 @@ function CadastroServico() {
           component="h1"
           align="center"
         >
-          Formulário de cadastro serviço
+          Cadastrar serviço
         </Typography>
         <TextField
           value={servico.nome}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedServico(e)}
-          id="titulo"
-          label="titulo"
+          id="nome"
+          label="Nome"
           variant="outlined"
-          name="titulo"
+          name="nome"
           margin="normal"
           fullWidth
         />
         <TextField
           value={servico.descricao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedServico(e)}
-          id="texto"
-          label="texto"
-          name="texto"
+          id="descricao"
+          label="Descrição"
+          name="descricao"
           variant="outlined"
           margin="normal"
           fullWidth
         />
-
         <FormControl>
-          <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
+          <InputLabel id="demo-simple-select-helper-label">
+            Categoria
+          </InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"

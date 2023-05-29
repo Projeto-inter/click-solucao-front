@@ -2,18 +2,22 @@ import { Box, Grid, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import {Button} from '@material-ui/core'
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
-import { Servico } from '../../model/Servico';
-import { busca } from '../../../service/service';
+import Servico from '../../../model/Servico';
+import { busca } from '../../../service/Service';
+import './ListaServicos.css'
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
-function ListaServiços() {
+function ListaServicos() {
 
   const [servicos, setServicos] = useState<Servico[]>([])
   const navigate = useNavigate();
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   
-  function getPostagens() {
-    busca('/servicos', setServicos, {
+  function getServicos() {
+    busca('/servico', setServicos, {
       headers: {
         Authorization: token
       }
@@ -26,7 +30,7 @@ function ListaServiços() {
 
   useEffect(() => {
     if(token === ''){ 
-      alert('Ta tirando né??? sem token não rola')
+      alert('Usuário deslogado, por favor, logue no site para realizar a ação!')
       navigate('/login')
     }
   }, [])
@@ -37,18 +41,16 @@ function ListaServiços() {
         <Box display='flex' flexWrap={'wrap'} width={'100%'}>
           {servicos.map((servicos) => (
             <Grid item xs={3} border={1} borderRadius={2} borderColor={'lightgray'} p={2}>
-            <Typography>Servico:</Typography>
-            <Typography>{servico.titulo}</Typography>
-            <Typography>{servico.texto}</Typography>
-            <Typography>{new Intl.DateTimeFormat('pt-br', {
-              dateStyle: 'full'
-            }).format(new Date(servico.data))}</Typography>
-            <Typography>Tema: {servico.categoria?.descricao}</Typography>
+            <Typography>Serviços:</Typography>
+            <Typography>{servicos.nome}</Typography>
+            <Typography>{servicos.descricao}</Typography>
+            <Typography>{servicos.local}</Typography>
+            <Typography>Tema: {servicos.categoria?.descricao}</Typography>
             <Box display={'flex'} gap={4}>
-              <Link to={`/formularioPostagem/${servico.id}`}>
+              <Link to={`/formCategorias/${servicos.id}`}>
                 <Button fullWidth variant='contained' color='primary'>editar</Button>
               </Link>
-              <Link to={`/apagarPostagem/${servico.id}`}>
+              <Link to={`/deleteCategorias/${servicos.id}`}>
                 <Button fullWidth variant='contained' color='secondary'>apagar</Button>
               </Link>
             </Box>
@@ -60,4 +62,4 @@ function ListaServiços() {
   )
 }
 
-export default ListaServicos
+export default ListaServicos;
