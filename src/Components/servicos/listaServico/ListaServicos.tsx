@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Card, CardActions, CardContent, Grid, Typography } from '@mui/material'
 import { useEffect, useState } from 'react'
 import {Button} from '@material-ui/core'
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { busca } from '../../../service/Service';
 import './ListaServicos.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+
 
 function ListaServicos() {
 
@@ -37,29 +38,58 @@ function ListaServicos() {
 
   return (
     <>
-      <Grid container my={2} px={4}>
-        <Box display='flex' flexWrap={'wrap'} width={'100%'}>
-          {servicos.map((servicos) => (
-            <Grid item xs={3} border={1} borderRadius={2} borderColor={'lightgray'} p={2}>
-            <Typography>Serviços:</Typography>
-            <Typography>{servicos.nome}</Typography>
-            <Typography>{servicos.descricao}</Typography>
-            <Typography>{servicos.local}</Typography>
-            <Typography>Categoria: {servicos.categoria?.descricao}</Typography>
-            <Box display={'flex'} gap={4}>
-              <Link to={`/formCategorias/${servicos.id}`}>
-                <Button fullWidth variant='contained' color='primary'>editar</Button>
-              </Link>
-              <Link to={`/deleteCategorias/${servicos.id}`}>
-                <Button fullWidth variant='contained' color='secondary'>apagar</Button>
-              </Link>
-            </Box>
-          </Grid>
-          ))}
+    {
+      servicos.map(servico => (
+        <Box m={2} >
+          <Card variant="outlined">
+            <CardContent>
+              <Typography color="textSecondary" gutterBottom>
+                Serviços
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {servicos.nome}
+              </Typography>
+              <Typography variant="h5" component="h2">
+                {servicos.foto}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {servico.descricao}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {servico.local}
+                </Typography>
+                <Typography variant="body2" component="p">
+                {servico.valor}
+              </Typography>
+              <Typography variant="body2" component="p">
+                {servico.categoria?.descricao}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Box display="flex" justifyContent="center" mb={1.5}>
+
+                <Link to={`/formularioPostagem/${servico.id}`} className="text-decorator-none" >
+                  <Box mx={1}>
+                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      editar
+                    </Button>
+                  </Box>
+                </Link>
+                <Link to={`/deletarPostagem/${servico.id}`} className="text-decorator-none">
+                  <Box mx={1}>
+                    <Button variant="contained" size='small' color="secondary">
+                      deletar
+                    </Button>
+                  </Box>
+                </Link>
+              </Box>
+            </CardActions>
+          </Card>
         </Box>
-      </Grid>
-    </>
-  )
+      ))
+    }
+  </>
+)
 }
 
 export default ListaServicos;
