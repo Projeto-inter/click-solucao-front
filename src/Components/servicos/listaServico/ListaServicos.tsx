@@ -7,6 +7,7 @@ import { busca } from '../../../service/Service';
 import './ListaServicos.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function ListaServicos() {
@@ -31,7 +32,16 @@ function ListaServicos() {
 
   useEffect(() => {
     if(token === ''){ 
-      alert('Usuário deslogado, por favor, logue no site para realizar a ação!')
+      toast.success('Usuário precisa estar logado!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate('/login')
     }
   }, [])

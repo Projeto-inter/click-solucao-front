@@ -13,6 +13,7 @@ import { buscaId, deleteId } from "../../../service/Service";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 
 
@@ -26,7 +27,16 @@ function DeletarServico() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.success('Usuário precisa estar logado!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate("/login");
     }
   }, [token]);
@@ -52,7 +62,16 @@ function DeletarServico() {
         Authorization: token,
       },
     });
-    alert("Serviço deletado com sucesso");
+    toast.success('🦄 Wow so easy!', {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
   }
 
   function nao() {

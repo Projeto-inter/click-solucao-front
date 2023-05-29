@@ -15,6 +15,7 @@ import { busca } from "../../../service/Service";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/action";
+import { toast } from "react-toastify";
 
 function ListaCategorias() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -33,7 +34,16 @@ function ListaCategorias() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        alert("O seu token expirou, logue novamente");
+        toast.error('Usuário precisa estar logado!', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
         dispatch(addToken(""));
         navigate("/login");
       }
@@ -46,7 +56,16 @@ function ListaCategorias() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      toast.success('Usuário precisa estar logado!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate("/login");
     }
   }, []);
