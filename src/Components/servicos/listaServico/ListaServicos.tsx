@@ -45,7 +45,7 @@ function ListaServicos() {
             <Typography>{servicos.nome}</Typography>
             <Typography>{servicos.descricao}</Typography>
             <Typography>{servicos.local}</Typography>
-            <Typography>Tema: {servicos.categoria?.descricao}</Typography>
+            <Typography>Categoria: {servicos.categoria?.descricao}</Typography>
             <Box display={'flex'} gap={4}>
               <Link to={`/formCategorias/${servicos.id}`}>
                 <Button fullWidth variant='contained' color='primary'>editar</Button>

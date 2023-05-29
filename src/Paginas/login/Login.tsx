@@ -5,19 +5,28 @@ import { Link, useNavigate } from "react-router-dom";
 import { login } from "../../service/Service";
 import "./Login.css";
 import { useDispatch } from "react-redux";
-import { addToken } from "../../store/tokens/action";
+import { addId, addToken } from "../../store/tokens/action";
 import UsuarioLogin from "../../model/UsuarioLogin";
 
 function Login() {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-  const [token,setToken] = useState('');
+  const [token, setToken] = useState("");
   const [userLogin, setUserLogin] = useState<UsuarioLogin>({
     id: 0,
-    nome: '',
+    nome: "",
     usuario: "",
     senha: "",
-    foto: '',
+    foto: "",
+    token: "",
+  });
+
+  const [respUserLogin, setRespUserLogin] = useState<UsuarioLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
     token: "",
   });
 
@@ -28,23 +37,23 @@ function Login() {
     });
   }
 
-  useEffect(() => {
-    if (token != "") {
-      dispatch(addToken(token));
-      navigate("/home");
-    }
-  }, [token]);
-
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
+  async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
     try {
-      await login(`/usuarios/logar`, userLogin, setToken);
-
-      alert("Usuário logado com sucesso!");
+      await login(`/usuarios/logar`, userLogin, setRespUserLogin);
+      alert("Usuário logado com sucesso");
     } catch (error) {
-      alert("Dados do usuário inconsistentes. Erro ao logar!");
+      alert("Usuário e/ou senha incorretos!");
     }
   }
+
+  useEffect(() => {
+    if (respUserLogin.token !== "") {
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString()));
+      navigate("/home");
+    }
+  }, [respUserLogin.token]);
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
@@ -95,7 +104,6 @@ function Login() {
               </Typography>
             </Box>
             <Link to="/signin" className="text-decorator-none">
-
               <Typography
                 variant="subtitle1"
                 gutterBottom

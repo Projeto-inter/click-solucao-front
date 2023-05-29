@@ -160,6 +160,27 @@ function CadastroServico() {
           margin="normal"
           fullWidth
         />
+        <TextField
+          value={servico.local}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedServico(e)}
+          id="local"
+          label="Local"
+          name="local"
+          variant="outlined"
+          margin="normal"
+          fullWidth
+        />
+        <TextField
+          value={servico.valor}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => updatedServico(e)}
+          id="valor"
+          label="Valor"
+          name="valor"
+          variant="outlined"
+          margin="normal"
+          type='number'
+          fullWidth
+        />
         <FormControl>
           <InputLabel id="demo-simple-select-helper-label">
             Categoria

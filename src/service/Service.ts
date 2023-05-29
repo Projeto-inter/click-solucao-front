@@ -11,7 +11,7 @@ export const cadastroUsuario = async (url: string, dados: object, setDados: any)
 
 export const login = async (url: string, dados: object, setDados: any) => {
   const resposta = await api.post(url, dados)
-  setDados(resposta.data.token)
+  setDados(resposta.data)
 }
 
 export const busca = async(url: any, setDado: any, header: any) => { //header: passa o token para autenticar a requisição 
