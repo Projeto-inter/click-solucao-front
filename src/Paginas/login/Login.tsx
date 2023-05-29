@@ -7,6 +7,7 @@ import "./Login.css";
 import { useDispatch } from "react-redux";
 import { addId, addToken } from "../../store/tokens/action";
 import UsuarioLogin from "../../model/UsuarioLogin";
+import { toast } from "react-toastify";
 
 function Login() {
   let navigate = useNavigate();
@@ -41,9 +42,27 @@ function Login() {
     event.preventDefault();
     try {
       await login(`/usuarios/logar`, userLogin, setRespUserLogin);
-      alert("Usuário logado com sucesso");
+      toast.success('Usuário logado com sucesso!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } catch (error) {
-      alert("Usuário e/ou senha incorretos!");
+      toast.error('Erro ao logar, confira as informações fornecidas', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
 

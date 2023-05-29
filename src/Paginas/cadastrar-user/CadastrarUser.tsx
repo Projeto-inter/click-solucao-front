@@ -4,6 +4,7 @@ import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import User from "../../model/User";
 import { cadastroUsuario } from "../../service/Service";
+import { toast } from "react-toastify";
 
 function CadastrarUsuario() {
   let navigate = useNavigate();
@@ -52,11 +53,27 @@ function CadastrarUsuario() {
     e.preventDefault();
     if (confirmarSenha == user.senha) {
       cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Usuario cadastrado com sucesso");
+      toast.success('Usuário cadastrado com sucesso!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } else {
-      alert(
-        "Senhas diferentes uma da da outra. Por favor, verifique se digitou corretamente."
-      );
+      toast.error('A senha precisa ser igual', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
   }
   return (

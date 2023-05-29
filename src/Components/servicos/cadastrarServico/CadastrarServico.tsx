@@ -18,6 +18,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import User from "../../../model/User";
 import Servico from "../../../model/Servico";
 import Categoria from "../../../model/Categoria";
+import { toast } from "react-toastify";
 
 function CadastroServico() {
   const navigate = useNavigate();
@@ -32,7 +33,16 @@ function CadastroServico() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.success('Usuário precisa estar logado!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate("/login");
     }
   }, [token]);
@@ -113,14 +123,32 @@ function CadastroServico() {
           Authorization: token,
         },
       });
-      alert("Serviço atualizada com sucesso");
+      toast.success('Serviço cadastrado com sucesso!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } else {
       post(`/servico`, servico, setServico, {
         headers: {
           Authorization: token,
         },
       });
-      alert("Serviço cadastrado com sucesso");
+      toast.success('🦄 Wow so easy!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
     back();
   }

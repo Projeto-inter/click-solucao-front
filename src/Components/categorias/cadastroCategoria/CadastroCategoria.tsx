@@ -5,6 +5,7 @@ import { buscaId, post, put } from "../../../service/Service";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function CadastroCategoria() {
   let navigate = useNavigate();
@@ -21,7 +22,16 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.error('Usuário precisa estar logado!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate("/login");
     }
   }, [token]);
@@ -55,14 +65,32 @@ function CadastroCategoria() {
           Authorization: token,
         },
       });
-      alert("Categoria atualizada com sucesso");
+      toast.success('Categoria cadastrada com sucesso!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } else {
       post(`/categorias`, categoria, setCategoria, {
         headers: {
           Authorization: token,
         },
       });
-      alert("Categoria cadastrada com sucesso");
+      toast.success('🦄 Wow so easy!', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
     back();
   }
