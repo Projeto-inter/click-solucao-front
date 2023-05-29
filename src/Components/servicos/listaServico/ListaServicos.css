@@ -1,0 +1,17 @@
+.titulo{
+    font-weight: bold;
+    color: red;
+ }
+
+ .formatTexto{
+    text-align: justify;
+ }
+
+ .card {
+    border-radius: 5px !important;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22) !important;
+    padding: 30px !important;
+    margin: 20px !important;
+    width: 400px !important;
+    transition: all 0.3s ease-out !important;
+ }

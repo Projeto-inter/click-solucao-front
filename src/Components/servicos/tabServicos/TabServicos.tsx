@@ -24,7 +24,7 @@ function TabServicos() {
             <Tab label="Sobre" value="2" />
           </TabList>
         </AppBar>
-        <TabPanel value="1"><ListaServicos /></TabPanel>
+        <TabPanel className="tbservicos" value="1"><ListaServicos /></TabPanel>
         <TabPanel value="2">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nemo esse quo accusamus voluptatum minus repudiandae cupiditate quisquam illo praesentium deserunt asperiores optio explicabo nulla facilis, facere excepturi debitis atque!
         </TabPanel>
