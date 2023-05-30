@@ -1,28 +1,40 @@
-
-.textos1{
+.textos1 {
     font-weight: bold !important;
- }
- 
- .imagem{
-     background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
-     background-repeat: no-repeat;
-     width: 100vh;
-     min-height: 100vh;
-     background-size: cover;
-     background-position: center;
- }
- 
- .text-decorator-none{
-     text-decoration: none;
- }
+}
 
 .imagemLogin {
-    background-image: url('https://i.imgur.com/d5bMdDJ.jpg');
-    min-height: 100vh;
-    width:100vh; 
-    background-repeat: no-repeat;
+    background-image: url(https://i.imgur.com/o44m6Ce.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 100vh;
     background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-decorator-none {
+    text-decoration: none;
 }
 
 
+.login-field {
+    background: rgba(94, 23, 235, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.form-login {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.logo {
+    width: max(132px, 20vh);
+    align-items: center;
+    margin: 0 auto;
+    display: block;
+}

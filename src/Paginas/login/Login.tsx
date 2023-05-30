@@ -42,7 +42,7 @@ function Login() {
     event.preventDefault();
     try {
       await login(`/usuarios/logar`, userLogin, setRespUserLogin);
-      toast.success('Usuário logado com sucesso!', {
+      toast.success("Usuário logado com sucesso!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -51,9 +51,9 @@ function Login() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     } catch (error) {
-      toast.error('Erro ao logar, confira as informações fornecidas', {
+      toast.error("Erro ao logar, confira as informações fornecidas", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -62,7 +62,7 @@ function Login() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
   }
 
@@ -75,10 +75,12 @@ function Login() {
   }, [respUserLogin.token]);
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid alignItems="center" xs={6}>
-        <Box paddingX={20}>
+    <Grid container direction="row"  className='imagemLogin'>
+      <Grid xs={4} className='login-field'>
+      <img src="https://i.imgur.com/wApjKwJ.png" alt="" className='logo' />
+        <Box px={6}>
           <form onSubmit={onSubmit}>
+            
             <Typography
               variant="h3"
               gutterBottom
@@ -93,22 +95,24 @@ function Login() {
               value={userLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="usuário"
+              label="Usuário"
               variant="outlined"
               name="usuario"
               margin="normal"
               fullWidth
+              className="form-login"
             />
             <TextField
               value={userLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
-              label="senha"
+              label="Senha"
               variant="outlined"
               name="senha"
               margin="normal"
               type="password"
               fullWidth
+              className="form-login"
             />
             <Box marginTop={2} textAlign="center">
               <Button type="submit" variant="contained" color="primary">
@@ -135,7 +139,6 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid xs={6} className="imagem"></Grid>
     </Grid>
   );
 }
