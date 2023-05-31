@@ -1,0 +1,38 @@
+    .perfilContainer {
+        width: 80vw;
+        margin-inline: auto;
+        margin-block: 1.5rem;
+        /* background: #f60; */
+    }
+    
+    .perfilBanner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        flex-direction: row-reverse;
+        padding: 1rem
+    }
+    
+    .perfilBanner img {
+        width: 10vw;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 5px solid black;
+        padding: 8px;
+    }
+    
+    .perfilUpdate {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .perfilUpdate form {
+        width: 50vw;
+    }
+    
+    .perfilServico {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:1rem;
+    }

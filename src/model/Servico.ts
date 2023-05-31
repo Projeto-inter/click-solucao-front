@@ -10,6 +10,7 @@ interface Servico {
   valor: number;
   categoria?: Categoria | null;
   usuario?: User | null;
+  data: Date;
 }
 
 export default Servico;

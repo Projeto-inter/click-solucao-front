@@ -126,7 +126,7 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link to="/signin" className="text-decorator-none">
+            <Link to="/register" className="text-decorator-none">
               <Typography
                 variant="subtitle1"
                 gutterBottom
