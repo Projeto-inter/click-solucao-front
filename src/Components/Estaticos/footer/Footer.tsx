@@ -32,15 +32,16 @@ function Footer() {
               justifyContent="center"
             >
               <Typography
-                variant="h5"
+                variant="h6"
                 align="center"
                 gutterBottom
                 style={{ color: "white" }}
+                
               >
                 Siga-nos nas redes sociais{" "}
               </Typography>
             </Box>
-            <Box display="flex" alignItems="center" justifyContent="center">
+            <Box className="tamanhoLogo" display="flex" alignItems="center" justifyContent="center">
               <a href="https://www.facebook.com" target="_blank">
                 <FacebookIcon className="facebook-icon" />
               </a>
@@ -55,6 +56,7 @@ function Footer() {
           <Box className="barra-footer-bottom">
             <Box paddingTop={1}>
               <Typography
+              className="margemcopy"
                 variant="subtitle2"
                 align="center"
                 gutterBottom

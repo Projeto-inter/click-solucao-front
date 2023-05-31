@@ -1,8 +1,18 @@
 .cursor{
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 .text-decorator-none{
     text-decoration: none;
+}
+
+.styleNav{
+    background-color: #29274C!important;
+}
+
+.imgNav{
+
+  
+    display: block;
 }

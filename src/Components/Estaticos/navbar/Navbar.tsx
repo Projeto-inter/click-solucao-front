@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -33,16 +33,25 @@ function Navbar() {
 
   if (token !== "") {
     navbarComponent = (
-      <AppBar position="static">
-        <Toolbar variant="dense">
+      <AppBar className="styleNav" position="static">
+        <Toolbar  variant="dense">
+        <Grid container justifyContent={'space-between'} className='fonte'>
+        <Box className="imgNav">
+              <Typography variant="h5">
+                <img style={{height: "45px"}} src="https://ik.imagekit.io/devdaiane/lampadinha.png?updatedAt=1685559291505"></img>
+              </Typography>
+            </Box>
           <Box>
             <Link to="/home">
-              <Button>
-                <Box className="cursor">
+              <Button> 
+
+                <Box  style={{ cursor: 'pointer' }} className="cursor">
                   <Typography variant="h6" color="inherit">
                     Click Soluções
                   </Typography>
                 </Box>
+
+
               </Button>
             </Link>
             <Link to="/servicos">
@@ -81,6 +90,7 @@ function Navbar() {
                 </Box>
               </Button>
             </Link>
+
             <Button>
               <Box mx={1} className="cursor" onClick={goLogout}>
                 <Typography variant="h6" color="inherit">
@@ -89,6 +99,7 @@ function Navbar() {
               </Box>
             </Button>
           </Box>
+          </Grid>
         </Toolbar>
       </AppBar>
     );
