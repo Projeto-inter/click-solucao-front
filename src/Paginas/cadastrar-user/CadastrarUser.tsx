@@ -91,10 +91,9 @@ function CadastrarUsuario() {
             <Typography
               variant="h3"
               gutterBottom
-              color="textprimary"
               component="h3"
               align="center"
-              style={{ fontWeight: "bold", color: "aquamarine" }}
+              className='first-text2'
             >
               Cadastrar
             </Typography>
