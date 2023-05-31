@@ -21,10 +21,13 @@ import ListaServicos from "./Components/servicos/listaServico/ListaServicos";
 import CadastroServico from "./Components/servicos/cadastrarServico/CadastrarServico";
 import DeletarServico from "./Components/servicos/deletarServico/DeletarServico";
 import Perfil from "./Paginas/perfil/Perfil";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
       <Router>
         <Navbar />
         <div style={{ minHeight: "100vh" }}>

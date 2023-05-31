@@ -6,6 +6,7 @@ import TabList from '@material-ui/lab/TabList';
 import TabPanel from '@material-ui/lab/TabPanel';
 import ListaServicos from '../listaServico/ListaServicos';
 import './TabServicos.css'
+import { Box } from '@mui/material';
 
 
 
@@ -24,7 +25,11 @@ function TabServicos() {
             <Tab label="Sobre" value="2" />
           </TabList>
         </AppBar>
-        <TabPanel className="tbservicos" value="1"><ListaServicos /></TabPanel>
+        <TabPanel className="tbservicos" value="1">
+        <Box display="flex" flexWrap="wrap" justifyContent="center">
+          <ListaServicos />
+          </Box>
+          </TabPanel>
         <TabPanel value="2">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nemo esse quo accusamus voluptatum minus repudiandae cupiditate quisquam illo praesentium deserunt asperiores optio explicabo nulla facilis, facere excepturi debitis atque!
         </TabPanel>
