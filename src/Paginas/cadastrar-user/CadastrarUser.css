@@ -1,26 +1,31 @@
 .first-text2{
-    font-weight: bold;
-    color: aquamarine;
+    font-weight: bold!important;
+    color: white;
 }
 
 .fotoFundo2{
-    background-image : url("https://i.imgur.com/d5bMdDJ.jpg");
+    background-image : url("https://i.imgur.com/zg0fz8w.jpg");
     min-height : 100vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .corEntradas2{
-    background-color: pink;
+    background-color:  #DAC5F1
 }
 
 .btnCancelar{
-    background-color: rgb(233, 27, 62) !important;
+    background-color: red !important;
     cursor: pointer;
     margin-right: 20px!important;
 }
 
 .fullfill-vh-color2{
-    background-color: rgb(214, 93, 93);
+    background-color: #5e16ee;
     
+}
+
+.btnCadastrar{
+    background-color: blue!important;
+    cursor: pointer
 }
