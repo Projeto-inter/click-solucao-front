@@ -1,24 +1,32 @@
 .barra-footer{
-    background-color : rgb(160, 51, 51)!important;
-    height: 120px;
+    background-color : #29274C !important;
+    height: 100px;
 }
 
 .barra-footer-bottom{
-    background-color : rgb(160, 51, 51)!important;
-    height: 60px;
+    background-color : #29274C  !important;
+    height: 40px;
 }
 
 .facebook-icon{
-    font-size: 60px!important; 
-    fill: rgb(40, 40, 248)!important;
+    fill: white !important;
+    width: 35px!important;
+    height: 35px!important;
+    padding: 15px!important;
 }
 
 .github-icon{
-    font-size: 60px!important;
-    fill: black!important;
+    fill: white!important;
+    width: 35px!important;
+    height: 35px!important;
+    padding: 15px!important;
 }
 
 .linkedin-icon{
-    font-size: 60px!important;
-    fill: rgb(55, 55, 221)!important;
+    fill: white!important;
+    width: 35px!important;
+    height: 35px!important;
+    padding: 15px!important;
 }
+
+
