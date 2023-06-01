@@ -32,11 +32,8 @@ return (
         autoPlay
         infinite
         responsive={responsive}
-        buttonsDisabled={true}
-        stagePadding={{
-        paddingLeft: 0,
-        paddingRight: 0,
-        }}
+        disableDotsControls
+        disableButtonsControls={true}
         autoPlayInterval={4000}
     >
         {items.map((item, index) => (
