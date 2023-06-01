@@ -32,7 +32,6 @@ return (
         autoPlay
         infinite
         responsive={responsive}
-        doItsDisabled={true}
         buttonsDisabled={true}
         stagePadding={{
         paddingLeft: 0,
