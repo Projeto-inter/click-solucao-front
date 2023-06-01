@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-baseURL: 'https://clicksolucao.onrender.com/'
+baseURL: import.meta.env.VITE_AP_URL
 })
 
 export const cadastroUsuario = async (url: string, dados: object, setDados: any) => {
