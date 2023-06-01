@@ -32,7 +32,7 @@ return (
         autoPlay
         infinite
         responsive={responsive}
-        disableDotsControls
+        disableDotsControls={true}
         disableButtonsControls={true}
         autoPlayInterval={4000}
     >
