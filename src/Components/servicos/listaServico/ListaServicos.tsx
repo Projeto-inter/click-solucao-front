@@ -57,10 +57,10 @@ function ListaServicos() {
                 Serviços
               </Typography>
               <Typography variant="h5" component="h2">
-                {servicos.nome}
+                {servico.nome}
               </Typography>
               <Typography variant="h5" component="h2">
-                {servicos.foto}
+                {servico.foto}
               </Typography>
               <Typography variant="body2" component="p">
                 {servico.descricao}
