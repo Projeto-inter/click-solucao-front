@@ -81,14 +81,14 @@ function ListaServicos() {
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5}>
 
-                <Link to={`/formularioPostagem/${servico.id}`} className="text-decorator-none" >
+                <Link to={`/formServico/${servico.id}`} className="text-decorator-none" >
                   <Box mx={1}>
                     <Button variant="contained" className="marginLeft" size='small' color="primary" >
                       editar
                     </Button>
                   </Box>
                 </Link>
-                <Link to={`/deletarPostagem/${servico.id}`} className="text-decorator-none">
+                <Link to={`/deleteServico/${servico.id}`} className="text-decorator-none">
                   <Box mx={1}>
                     <Button variant="contained" size='small' color="secondary">
                       deletar
