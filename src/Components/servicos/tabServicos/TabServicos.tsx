@@ -31,7 +31,8 @@ function TabServicos() {
           </Box>
           </TabPanel>
         <TabPanel value="2">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi nemo esse quo accusamus voluptatum minus repudiandae cupiditate quisquam illo praesentium deserunt asperiores optio explicabo nulla facilis, facere excepturi debitis atque!
+          Click Soluções é uma plataforma de e-commerce inovadora que impulsiona a comercialização de serviços, oferecendo renda e autonomia aos participantes. Ao unir vendedores e consumidores, a plataforma facilita a expansão dos negócios e a variedade de opções de serviços. Com foco no empreendedorismo sustentável, promove práticas éticas, soluções ecológicas e apoio a negócios locais, contribuindo para o desenvolvimento sustentável das comunidades. Seja você um empreendedor ou consumidor, o Click Soluções é o destino ideal para negócios e serviços personalizados.
+          O click Soluções é o Projeto Integrador do Grupo 3 da 63ª turma do Bootcamp da Generation Brasil. Nele foi utilizado Java, SpringBoot, Docker, HTML, CSS, JavaScript entre outras ferramentas e linguagens
         </TabPanel>
         
       </TabContext>
