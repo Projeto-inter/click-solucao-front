@@ -78,25 +78,6 @@ function ListaServicos() {
                 Postado por: {servico.usuario?.nome}
               </Typography>
             </CardContent>
-            <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5}>
-
-                <Link to={`/formServico/${servico.id}`} className="text-decorator-none" >
-                  <Box mx={1}>
-                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                      editar
-                    </Button>
-                  </Box>
-                </Link>
-                <Link to={`/deleteServico/${servico.id}`} className="text-decorator-none">
-                  <Box mx={1}>
-                    <Button variant="contained" size='small' color="secondary">
-                      deletar
-                    </Button>
-                  </Box>
-                </Link>
-              </Box>
-            </CardActions>
           </Card>
         </Box>
       ))
