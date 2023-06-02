@@ -82,7 +82,7 @@
                 Authorization: token,
             },
             });
-            alert('Usuário cadastrado com sucesso');
+            alert('Usuário atualizado com sucesso');
             setUsuario({ ...usuario, senha: '' });
             setConfirmarSenha('');
         } catch (error) {
@@ -200,12 +200,12 @@
                 </Typography> */}
                 <Typography>Tema: {servico.categoria?.descricao}</Typography>
                 <Box display={'flex'} gap={4}>
-                <Link to={`/formularioServico/${servico.id}`}>
+                <Link to={`/formServico/${servico.id}`}>
                     <Button fullWidth variant="contained" color="primary">
                     editar
                     </Button>
                 </Link>
-                <Link to={`/apagarServico/${servico.id}`}>
+                <Link to={`/deleteServico/${servico.id}`}>
                     <Button fullWidth variant="contained" color="secondary">
                     apagar
                     </Button>
