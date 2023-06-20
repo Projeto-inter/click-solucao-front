@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { Container, Typography, TextField, Button } from "@material-ui/core";
 import Categoria from "../../../model/Categoria";
@@ -6,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
+import { Box } from "@mui/material";
 
 function CadastroCategoria() {
   let navigate = useNavigate();
@@ -22,7 +24,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     if (token == "") {
-      toast.error('Usuário precisa estar logado!', {
+      toast.error("Usuário precisa estar logado!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -31,7 +33,7 @@ function CadastroCategoria() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
       navigate("/login");
     }
   }, [token]);
@@ -65,7 +67,7 @@ function CadastroCategoria() {
           Authorization: token,
         },
       });
-      toast.success('Categoria cadastrada com sucesso!', {
+      toast.success("Categoria cadastrada com sucesso!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -74,14 +76,14 @@ function CadastroCategoria() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     } else {
       post(`/categorias`, categoria, setCategoria, {
         headers: {
           Authorization: token,
         },
       });
-      toast.success('🦄 Wow so easy!', {
+      toast.success("🦄 Wow so easy!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -90,7 +92,7 @@ function CadastroCategoria() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
+      });
     }
     back();
   }
@@ -102,27 +104,27 @@ function CadastroCategoria() {
   return (
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
-        <Typography
-          variant="h3"
-          color="textSecondary"
-          component="h1"
-          align="center"
-        >
-          Cadastrar categoria
+        <Typography variant="h5" align="center" style={{textTransform: "uppercase", fontWeight: "700", color: "#29274c"}}>
+          {id !== undefined ? " Atualização " : " Cadastro "}
+          de Categoria
         </Typography>
         <TextField
           value={categoria.descricao}
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedCategoria(e)}
           id="descricao"
-          label="descricao"
+          label="Descrição"
           variant="outlined"
           name="descricao"
           margin="normal"
           fullWidth
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Box display="flex" justifyContent="center">
+        <Button type="submit" variant="contained" style={{
+          backgroundColor: "#FDD392", color: "#bf7f1d"
+        }} >
           Finalizar
         </Button>
+        </Box>
       </form>
     </Container>
   );
